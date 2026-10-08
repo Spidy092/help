@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T07:11:32.967947+00:00",
+  "title": "Design System: Sanjana Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.00743 260.73)",
+          "oklch(26% 0.00743 260.73)",
+          "oklch(38% 0.00743 260.73)",
+          "oklch(49% 0.00743 260.73)",
+          "oklch(61% 0.00743 260.73)",
+          "oklch(72% 0.00743 260.73)",
+          "oklch(84% 0.00743 260.73)",
+          "oklch(95% 0.00743 260.73)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.01272 258.37)",
+          "oklch(26% 0.01272 258.37)",
+          "oklch(38% 0.01272 258.37)",
+          "oklch(49% 0.01272 258.37)",
+          "oklch(61% 0.01272 258.37)",
+          "oklch(72% 0.01272 258.37)",
+          "oklch(84% 0.01272 258.37)",
+          "oklch(95% 0.01272 258.37)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.02973 263.16)",
+          "oklch(26% 0.02973 263.16)",
+          "oklch(38% 0.02973 263.16)",
+          "oklch(49% 0.02973 263.16)",
+          "oklch(61% 0.02973 263.16)",
+          "oklch(72% 0.02973 263.16)",
+          "oklch(84% 0.02973 263.16)",
+          "oklch(95% 0.02973 263.16)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.01787 264.47)",
+          "oklch(26% 0.01787 264.47)",
+          "oklch(38% 0.01787 264.47)",
+          "oklch(49% 0.01787 264.47)",
+          "oklch(61% 0.01787 264.47)",
+          "oklch(72% 0.01787 264.47)",
+          "oklch(84% 0.01787 264.47)",
+          "oklch(95% 0.01787 264.47)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Blue",
+        "tonalRamp": [
+          "oklch(15% 0.19330 266.76)",
+          "oklch(26% 0.19330 266.76)",
+          "oklch(38% 0.19330 266.76)",
+          "oklch(49% 0.19330 266.76)",
+          "oklch(61% 0.19330 266.76)",
+          "oklch(72% 0.19330 266.76)",
+          "oklch(84% 0.19330 266.76)",
+          "oklch(95% 0.19330 266.76)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "tonalRamp": [
+          "oklch(15% 0.01380 258.35)",
+          "oklch(26% 0.01380 258.35)",
+          "oklch(38% 0.01380 258.35)",
+          "oklch(49% 0.01380 258.35)",
+          "oklch(61% 0.01380 258.35)",
+          "oklch(72% 0.01380 258.35)",
+          "oklch(84% 0.01380 258.35)",
+          "oklch(95% 0.01380 258.35)"
+        ]
+      },
+      "image-stage": {
+        "role": "neutral",
+        "displayName": "Image Stage",
+        "tonalRamp": [
+          "oklch(15% 0.02050 264.47)",
+          "oklch(26% 0.02050 264.47)",
+          "oklch(38% 0.02050 264.47)",
+          "oklch(49% 0.02050 264.47)",
+          "oklch(61% 0.02050 264.47)",
+          "oklch(72% 0.02050 264.47)",
+          "oklch(84% 0.02050 264.47)",
+          "oklch(95% 0.02050 264.47)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.00000 89.88)",
+          "oklch(26% 0.00000 89.88)",
+          "oklch(38% 0.00000 89.88)",
+          "oklch(49% 0.00000 89.88)",
+          "oklch(61% 0.00000 89.88)",
+          "oklch(72% 0.00000 89.88)",
+          "oklch(84% 0.00000 89.88)",
+          "oklch(95% 0.00000 89.88)"
+        ]
+      },
+      "button-text": {
+        "role": "neutral",
+        "displayName": "Button Text",
+        "tonalRamp": [
+          "oklch(15% 0.00000 89.88)",
+          "oklch(26% 0.00000 89.88)",
+          "oklch(38% 0.00000 89.88)",
+          "oklch(49% 0.00000 89.88)",
+          "oklch(61% 0.00000 89.88)",
+          "oklch(72% 0.00000 89.88)",
+          "oklch(84% 0.00000 89.88)",
+          "oklch(95% 0.00000 89.88)"
+        ]
+      },
+      "dark-paper": {
+        "role": "neutral",
+        "displayName": "Dark Paper",
+        "tonalRamp": [
+          "oklch(15% 0.02257 265.65)",
+          "oklch(26% 0.02257 265.65)",
+          "oklch(38% 0.02257 265.65)",
+          "oklch(49% 0.02257 265.65)",
+          "oklch(61% 0.02257 265.65)",
+          "oklch(72% 0.02257 265.65)",
+          "oklch(84% 0.02257 265.65)",
+          "oklch(95% 0.02257 265.65)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "tonalRamp": [
+          "oklch(15% 0.00743 260.73)",
+          "oklch(26% 0.00743 260.73)",
+          "oklch(38% 0.00743 260.73)",
+          "oklch(49% 0.00743 260.73)",
+          "oklch(61% 0.00743 260.73)",
+          "oklch(72% 0.00743 260.73)",
+          "oklch(84% 0.00743 260.73)",
+          "oklch(95% 0.00743 260.73)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark Muted",
+        "tonalRamp": [
+          "oklch(15% 0.02474 262.08)",
+          "oklch(26% 0.02474 262.08)",
+          "oklch(38% 0.02474 262.08)",
+          "oklch(49% 0.02474 262.08)",
+          "oklch(61% 0.02474 262.08)",
+          "oklch(72% 0.02474 262.08)",
+          "oklch(84% 0.02474 262.08)",
+          "oklch(95% 0.02474 262.08)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Dark Line",
+        "tonalRamp": [
+          "oklch(15% 0.03544 261.26)",
+          "oklch(26% 0.03544 261.26)",
+          "oklch(38% 0.03544 261.26)",
+          "oklch(49% 0.03544 261.26)",
+          "oklch(61% 0.03544 261.26)",
+          "oklch(72% 0.03544 261.26)",
+          "oklch(84% 0.03544 261.26)",
+          "oklch(95% 0.03544 261.26)"
+        ]
+      },
+      "dark-blue": {
+        "role": "primary",
+        "displayName": "Dark Blue",
+        "tonalRamp": [
+          "oklch(15% 0.10582 273.69)",
+          "oklch(26% 0.10582 273.69)",
+          "oklch(38% 0.10582 273.69)",
+          "oklch(49% 0.10582 273.69)",
+          "oklch(61% 0.10582 273.69)",
+          "oklch(72% 0.10582 273.69)",
+          "oklch(84% 0.10582 273.69)",
+          "oklch(95% 0.10582 273.69)"
+        ]
+      },
+      "dark-panel": {
+        "role": "neutral",
+        "displayName": "Dark Panel",
+        "tonalRamp": [
+          "oklch(15% 0.03368 262.82)",
+          "oklch(26% 0.03368 262.82)",
+          "oklch(38% 0.03368 262.82)",
+          "oklch(49% 0.03368 262.82)",
+          "oklch(61% 0.03368 262.82)",
+          "oklch(72% 0.03368 262.82)",
+          "oklch(84% 0.03368 262.82)",
+          "oklch(95% 0.03368 262.82)"
+        ]
+      },
+      "dark-image-stage": {
+        "role": "neutral",
+        "displayName": "Dark Image Stage",
+        "tonalRamp": [
+          "oklch(15% 0.04152 265.35)",
+          "oklch(26% 0.04152 265.35)",
+          "oklch(38% 0.04152 265.35)",
+          "oklch(49% 0.04152 265.35)",
+          "oklch(61% 0.04152 265.35)",
+          "oklch(72% 0.04152 265.35)",
+          "oklch(84% 0.04152 265.35)",
+          "oklch(95% 0.04152 265.35)"
+        ]
+      },
+      "dark-white": {
+        "role": "neutral",
+        "displayName": "Dark White",
+        "tonalRamp": [
+          "oklch(15% 0.03064 260.47)",
+          "oklch(26% 0.03064 260.47)",
+          "oklch(38% 0.03064 260.47)",
+          "oklch(49% 0.03064 260.47)",
+          "oklch(61% 0.03064 260.47)",
+          "oklch(72% 0.03064 260.47)",
+          "oklch(84% 0.03064 260.47)",
+          "oklch(95% 0.03064 260.47)"
+        ]
+      },
+      "dark-button-text": {
+        "role": "neutral",
+        "displayName": "Dark Button Text",
+        "tonalRamp": [
+          "oklch(15% 0.03813 268.03)",
+          "oklch(26% 0.03813 268.03)",
+          "oklch(38% 0.03813 268.03)",
+          "oklch(49% 0.03813 268.03)",
+          "oklch(61% 0.03813 268.03)",
+          "oklch(72% 0.03813 268.03)",
+          "oklch(84% 0.03813 268.03)",
+          "oklch(95% 0.03813 268.03)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Condensed display",
+        "purpose": "Developer name"
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Section headings"
+      }
+    },
+    "shadows": [
+      {
+        "name": "stage",
+        "value": "0 22px 42px -20px #15254850",
+        "purpose": "Featured storyboard stage"
+      },
+      {
+        "name": "project-image",
+        "value": "0 20px 28px -16px #16214466",
+        "purpose": "Mockup image layering"
+      }
+    ],
+    "motion": [
+      {
+        "name": "hero-enter",
+        "value": "1.1s expo.out",
+        "purpose": "Name reveal"
+      },
+      {
+        "name": "stage-enter",
+        "value": "1.3s expo.out",
+        "purpose": "Stage entrance"
+      },
+      {
+        "name": "frame-reveal",
+        "value": ".65s expo.out",
+        "purpose": "Selected project image reveal"
+      },
+      {
+        "name": "work-scroll",
+        "value": "scrub: 1; ease: none; y: 28 to -16",
+        "purpose": "Scroll-linked work mockups"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1600px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "767px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary link",
+      "kind": "button",
+      "description": "Static preview of the implemented primary link.",
+      "html": "<a class=\"ds-primary\" href=\"#projects\">Explore my work <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:30px;background:var(--blue);color:var(--button-text);padding:18px 22px;font:600 13px Manrope,sans-serif;min-height:54px;text-decoration:none;transition:gap .25s,background .25s}.ds-primary:hover{gap:42px} .ds-primary:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }",
+      "refersTo": "primary-link"
+    },
+    {
+      "name": "Icon button",
+      "kind": "button",
+      "description": "Static preview of the implemented icon button.",
+      "html": "<button class=\"ds-icon\" aria-label=\"Next project\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m9 18 6-6-6-6\"/></svg></button>",
+      "css": ".ds-icon{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);transition:background .2s,color .2s;cursor:pointer}.ds-icon:hover{background:var(--ink);color:var(--paper)} .ds-icon:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }",
+      "refersTo": "icon-button"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Static preview of the implemented navigation.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Sample navigation\"><a class=\"ds-nav-link\" href=\"#home\">Home</a><a class=\"ds-nav-link\" href=\"#projects\">Projects</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;font:600 12px Manrope,sans-serif;color:var(--ink)}.ds-nav-link{position:relative;padding:12px 0;color:inherit;text-decoration:none}.ds-nav-link:after{content:\"\";position:absolute;left:0;right:100%;bottom:7px;height:2px;background:var(--blue);transition:right .2s}.ds-nav-link:hover:after{right:0} .ds-nav-link:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }"
+    },
+    {
+      "name": "Technology labels",
+      "kind": "chip",
+      "description": "Static preview of the implemented technology labels.",
+      "html": "<div class=\"ds-tech\"><span>React</span><span>TypeScript</span><span>REST APIs</span></div>",
+      "css": ".ds-tech{display:flex;flex-wrap:wrap;gap:15px;font:400 10px Manrope,sans-serif;color:var(--muted);margin-top:17px} .ds-tech:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }"
+    },
+    {
+      "name": "Project details",
+      "kind": "card",
+      "description": "Static preview of the implemented project details.",
+      "html": "<section class=\"ds-details\"><h4>Inside the project</h4><ul><li>Interactive scheduling calendar</li><li>Media library with cropping, compression and tagging</li></ul></section>",
+      "css": ".ds-details{margin-top:20px;padding:24px;background:var(--panel);color:var(--ink);border-radius:12px;font:400 13px/1.8 Manrope,sans-serif}.ds-details h4{margin:0 0 10px;font-size:15px}.ds-details ul{padding-left:18px} .ds-details:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }",
+      "refersTo": "project-details"
+    },
+    {
+      "name": "Text link",
+      "kind": "button",
+      "description": "Static preview of the implemented text link.",
+      "html": "<button class=\"ds-text\">Project details <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 5v14M5 12h14\"/></svg></button>",
+      "css": ".ds-text{display:inline-flex;align-items:center;gap:20px;font:600 12px Manrope,sans-serif;border:0;background:transparent;padding:10px 0;color:var(--blue);cursor:pointer}.ds-text:hover{text-decoration:underline;text-underline-offset:5px} .ds-text:focus-visible { outline:3px solid var(--blue); outline-offset:5px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Motion Storyboard",
+    "overview": "Project interfaces become selectable storyboard frames. Cool porcelain, cobalt and graphite keep the presentation crisp; condensed display typography gives the developer\u2019s name and section headings a strong editorial rhythm.\n\nMotion supports exploration through a tilted featured stage, directional image reveals and scroll-linked project images. Project descriptions, career information and honest availability states remain readable without animation.",
+    "keyCharacteristics": [
+      "Selectable project storyboard",
+      "Condensed headings and clear sans-serif body copy",
+      "Matte image stages with restrained shadows",
+      "Light and dark palettes with shared semantic roles",
+      "Motion that respects reduced-motion preferences"
+    ],
+    "rules": [],
+    "dos": [
+      "Use semantic CSS variables so both themes remain coherent.",
+      "Keep the project mockups and verified career information central.",
+      "Use explicit button labels, visible keyboard focus and honest unavailable-link states.",
+      "Preserve the reduced-motion fallback and responsive stacking."
+    ],
+    "donts": [
+      "Do not invent contact destinations, project outcomes or downloadable PDF files.",
+      "Do not add autoplay to the manual project selector.",
+      "Do not turn every text label into a pill or every section into a card.",
+      "Do not hard-code the light palette into interactive controls."
+    ]
+  }
+}
