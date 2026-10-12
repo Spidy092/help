@@ -1,34 +1,32 @@
-# Sanjana’s portfolio
+# Sanjana — Front-End Portfolio
 
-An interactive React and TypeScript portfolio with a selectable project storyboard, inline project details, light/dark themes, responsive navigation, and a readable/downloadable resume.
+A cinematic, single-screen portfolio adapted from the supplied Stratum reference: a fine chamfered frame, restrained typography, six portfolio chapters, pointer parallax, and glass controls. Project chapters show the existing mockups and open readable detail panels. About, experience and resume are available through the same navigation.
 
 ## Run locally
 
 ```sh
 npm install
-npm run dev
+npm run dev -- --host 127.0.0.1
 ```
 
 ## Check and build
 
 ```sh
 npm run lint
+npm test
 npm run build
-npm run test
 ```
 
-Browser tests use Google Chrome at `/usr/bin/google-chrome`. Set `CHROME_PATH` to your installed Chrome executable when running on another system.
+Playwright uses Google Chrome at `/usr/bin/google-chrome`, or `CHROME_PATH` if configured. Tests cover chapter selection, project detail panels, resume download, keyboard navigation, motion preferences, asset loading and responsive overflow.
 
-## Update content
+## Content and assets
 
-Edit `src/data.ts` for project descriptions, technology lists, career information, resume text and verified destinations. The original repository contains an example email, generic social URLs and no live project URLs. These are not published as working contact actions. Set `profile.email`, project `demo` and `repository` fields when verified information is available. Project links automatically render in the expanded details.
+- `src/data.ts`: existing profile, projects, skills and resume content.
+- `src/chapters.ts`: portfolio chapter copy and route aliases.
+- `src/App.tsx`: chapter navigation, native dialog panels and motion controls.
+- `src/App.css`: reference-inspired frame, scene, responsive layout and transitions.
+- `public/scenes/interface-sculpture.png`: generated conceptual background; generation prompt recorded in `.impeccable/scene-prompt.txt` and embedded in PNG metadata.
 
-The original resume is a text document; the redesign preserves that download and offers an inline readable preview with Print / save as PDF. There is no supplied PDF resume.
+Fonts are bundled locally. The original project illustrations remain identified as mockups. Contact and external project destinations can be filled in `src/data.ts` when real links are available; the site does not submit an imitation contact form.
 
-## Design and assets
-
-The visual system is documented in `DESIGN.md`. Existing project mockups and portrait are preserved from the source repository; mockups do not establish live functionality or measured results. Motion supports project switching and modest image movement during scroll, with a reduced-motion fallback. Fonts are bundled locally. No external font requests are required.
-
-## Publication
-
-This checkout has not been pushed or deployed. Run `npm run build` and serve `dist/` using a static host. For deployment under a repository subpath, set the appropriate `base` in `vite.config.ts`. Keep the contact destinations complete before publishing.
+The resume can be downloaded as text or printed/saved as PDF. Motion can be paused and respects the system reduced-motion preference. This revision runs locally; GitHub Pages configuration remains in `vite.config.ts`.

@@ -1,520 +1,259 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  ArrowUpRight,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Moon,
-  Sun,
-  Menu,
-  X,
-  Download,
-  Plus,
-  Minus,
-} from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import profilePhoto from "./assets/profile.jpg";
-import { profile, projects, resume } from "./data";
-import "@fontsource/barlow-condensed/latin-600.css";
-import "@fontsource/barlow-condensed/latin-700.css";
-import "@fontsource/manrope/latin-400.css";
-import "@fontsource/manrope/latin-500.css";
-import "@fontsource/manrope/latin-600.css";
-import "./App.css";
+import { useEffect, useRef, useState } from 'react'
+import { ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight, Download, Grid2X2, MoveUpRight, Pause, Play, Plus, X } from 'lucide-react'
+import { chapters, chapterFromHash } from './chapters'
+import { profile, projects, resume } from './data'
+import profilePhoto from './assets/profile.jpg'
+import '@fontsource/inter/latin-400.css'
+import '@fontsource/inter/latin-700.css'
+import '@fontsource/chakra-petch/latin-700.css'
+import './App.css'
 
-gsap.registerPlugin(ScrollTrigger);
-const asset = (name: string) => `${import.meta.env.BASE_URL}${name}`;
-const nav = [
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Experience",
-  "Resume",
-  "Contact",
-];
-
-function App() {
-  const root = useRef<HTMLDivElement>(null);
-  const frame = useRef<HTMLImageElement>(null);
-  const [active, setActive] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [expanded, setExpanded] = useState<number | null>(null);
-  const [resumeOpen, setResumeOpen] = useState(false);
-  const [dark, setDark] = useState(
-    () => localStorage.getItem("portfolio-theme") === "dark",
-  );
-  const project = projects[active];
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = dark ? "dark" : "light";
-    localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
-  }, [dark]);
-
-  useEffect(() => {
-    const match = gsap.matchMedia();
-    match.add("(prefers-reduced-motion: no-preference)", () => {
-      const ctx = gsap.context(() => {
-        gsap.fromTo(
-          ".hero-word",
-          { y: 32, clipPath: "inset(0 0 80% 0)" },
-          {
-            y: 0,
-            clipPath: "inset(0 0 0% 0)",
-            duration: 1.1,
-            ease: "expo.out",
-          },
-        );
-        gsap.fromTo(
-          ".stage",
-          { rotation: 0, y: 24 },
-          { rotation: -3, y: 0, duration: 1.3, ease: "expo.out" },
-        );
-        gsap.utils.toArray<HTMLElement>(".work-image").forEach((image) => {
-          gsap.fromTo(
-            image,
-            { y: 28 },
-            {
-              y: -16,
-              ease: "none",
-              scrollTrigger: {
-                trigger: image,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 1,
-              },
-            },
-          );
-        });
-      }, root);
-      return () => ctx.revert();
-    });
-    return () => match.revert();
-  }, []);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        frame.current,
-        { clipPath: "inset(0 100% 0 0)", scale: 1.025 },
-        {
-          clipPath: "inset(0 0% 0 0)",
-          scale: 1,
-          duration: 0.65,
-          ease: "expo.out",
-        },
-      );
-    }, root);
-    return () => ctx.revert();
-  }, [active]);
-
-  useEffect(() => {
-    if (!menuOpen) return;
-    const close = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false);
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, [menuOpen]);
-
-  return (
-    <div ref={root} className="portfolio">
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <header className="site-header">
-        <a href="#home" className="wordmark">
-          Sanjana<span>.dev</span>
-        </a>
-        <nav
-          aria-label="Main navigation"
-          className={menuOpen ? "navigation open" : "navigation"}
-        >
-          {nav.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-        </nav>
-        <div className="header-actions">
-          <button
-            className="icon-button"
-            aria-label={`Switch to ${dark ? "light" : "dark"} theme`}
-            onClick={() => setDark(!dark)}
-          >
-            {dark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-          <button
-            className="icon-button menu-toggle"
-            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
-      </header>
-
-      <main id="main">
-        <section id="home" className="hero wrap">
-          <div className="hero-copy">
-            <h1 className="hero-word">
-              SANJANA<span className="name-period">.</span>
-            </h1>
-            <p className="role">
-              Front-end developer.
-              <br />
-              Interfaces, brought to life.
-            </p>
-            <p className="hero-description">
-              I build responsive web experiences with React, TypeScript and a
-              close eye for the details.
-            </p>
-            <a className="primary-link" href="#projects">
-              Explore my work <ArrowUpRight size={22} />
-            </a>
-          </div>
-          <div className="hero-art">
-            <div className="stage">
-              <div className="stage-top">
-                <span>{project.category}</span>
-                <span className="frame-count">
-                  {String(active + 1).padStart(2, "0")} / 03
-                </span>
-              </div>
-              <div className="stage-image">
-                <img
-                  ref={frame}
-                  key={project.title}
-                  src={asset(project.image)}
-                  alt={`${project.title} interface mockup`}
-                  fetchPriority="high"
-                />
-              </div>
-              <div className="stage-bottom">
-                <span>{project.title}</span>
-                <a
-                  href={`#project-${active}`}
-                  aria-label={`Read about ${project.title}`}
-                >
-                  <ArrowUpRight size={23} />
-                </a>
-              </div>
-            </div>
-            <div className="frame-controls">
-              <button
-                className="icon-button"
-                aria-label="Previous project"
-                onClick={() => setActive((active + 2) % 3)}
-              >
-                <ChevronLeft size={21} />
-              </button>
-              <p aria-live="polite">{project.title}</p>
-              <button
-                className="icon-button"
-                aria-label="Next project"
-                onClick={() => setActive((active + 1) % 3)}
-              >
-                <ChevronRight size={21} />
-              </button>
-            </div>
-          </div>
-          <div className="storyboard" aria-label="Choose a featured project">
-            {projects.map((item, index) => (
-              <button
-                key={item.title}
-                className={`frame-selector ${active === index ? "selected" : ""}`}
-                aria-pressed={active === index}
-                onClick={() => setActive(index)}
-              >
-                <span className="thumbnail">
-                  <img src={asset(item.image)} alt="" />
-                </span>
-                <span className="selector-copy">
-                  <strong>{item.title}</strong>
-                  <span>{item.category}</span>
-                </span>
-                <ArrowUpRight size={18} />
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section id="projects" className="work-section wrap">
-          <div className="section-title">
-            <h2>
-              Built for
-              <br />
-              <span>the browser.</span>
-            </h2>
-            <p>
-              Three projects. Different problems.
-              <br />
-              One focus on the experience.
-            </p>
-          </div>
-          <div className="project-grid">
-            {projects.map((item, index) => (
-              <article
-                id={`project-${index}`}
-                className={`project project-${index}`}
-                key={item.title}
-              >
-                <button
-                  className="project-visual"
-                  onClick={() => setExpanded(expanded === index ? null : index)}
-                  aria-label={`${expanded === index ? "Hide" : "Show"} ${item.title} details`}
-                  aria-expanded={expanded === index}
-                  aria-controls={`details-${index}`}
-                >
-                  <img
-                    className="work-image"
-                    src={asset(item.image)}
-                    alt={`${item.title} project mockup`}
-                    loading="lazy"
-                  />
-                  <span className="visual-action">
-                    <ArrowUpRight size={26} />
-                  </span>
-                </button>
-                <div className="project-heading">
-                  <h3>{item.title}</h3>
-                  <span>{item.category}</span>
-                </div>
-                <p>{item.description}</p>
-                <div className="tech-list">
-                  {item.stack.slice(0, 4).map((tech) => (
-                    <span key={tech}>{tech}</span>
-                  ))}
-                </div>
-                <button
-                  className="details-toggle"
-                  aria-expanded={expanded === index}
-                  aria-controls={`details-${index}`}
-                  onClick={() => setExpanded(expanded === index ? null : index)}
-                >
-                  Project details{" "}
-                  {expanded === index ? (
-                    <Minus size={18} />
-                  ) : (
-                    <Plus size={18} />
-                  )}
-                </button>
-                <div
-                  id={`details-${index}`}
-                  hidden={expanded !== index}
-                  className="project-details"
-                >
-                  <h4>Inside the project</h4>
-                  <ul>
-                    {item.features.map((feature) => (
-                      <li key={feature}>{feature}</li>
-                    ))}
-                  </ul>
-                  <p className="project-note">
-                    Project mockup shown. Live demo and source links will be
-                    added when available.
-                  </p>
-                  {item.demo && (
-                    <a href={item.demo}>
-                      Open live demo <ArrowUpRight size={16} />
-                    </a>
-                  )}
-                  {item.repository && (
-                    <a href={item.repository}>
-                      View source <ArrowUpRight size={16} />
-                    </a>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="about" className="about-section wrap">
-          <div className="portrait">
-            <img src={profilePhoto} alt="Sanjana" loading="lazy" />
-          </div>
-          <div className="about-copy">
-            <h2>
-              The person
-              <br />
-              behind the pixels.
-            </h2>
-            <p>
-              I’m Sanjana, a front-end developer with around two years of
-              experience turning designs into responsive web applications.
-            </p>
-            <p>
-              I enjoy solving visual and stateful problems in the browser, from
-              translating Figma layouts to building reusable components that
-              make the next screen easier to create.
-            </p>
-            <a className="text-link" href="#experience">
-              My experience <ArrowRight size={19} />
-            </a>
-          </div>
-        </section>
-
-        <section id="skills" className="skills-section wrap">
-          <h2>
-            My everyday
-            <br />
-            building blocks.
-          </h2>
-          <div className="skill-columns">
-            <div>
-              <h3>Interface</h3>
-              <p>
-                React.js
-                <br />
-                TypeScript
-                <br />
-                JavaScript
-                <br />
-                HTML5 & CSS3
-              </p>
-            </div>
-            <div>
-              <h3>Systems</h3>
-              <p>
-                Material UI
-                <br />
-                Tailwind CSS
-                <br />
-                Reusable components
-                <br />
-                Responsive layouts
-              </p>
-            </div>
-            <div>
-              <h3>Connections</h3>
-              <p>
-                REST APIs & Axios
-                <br />
-                Redux & Context API
-                <br />
-                Git
-                <br />
-                Figma to code
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="experience" className="experience-section wrap">
-          <h2>
-            Where I’ve
-            <br />
-            put it to work.
-          </h2>
-          <div className="experience-body">
-            <div className="job-header">
-              <div>
-                <h3>{profile.company}</h3>
-                <p>{profile.role}</p>
-              </div>
-              <span>{profile.period}</span>
-            </div>
-            <ul>
-              <li>Translate UI/UX designs into responsive React interfaces.</li>
-              <li>Build and document reusable components.</li>
-              <li>
-                Connect REST APIs with consistent loading and error handling.
-              </li>
-              <li>
-                Work with designers on layouts, transitions and frontend
-                performance.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="resume" className="resume-section wrap">
-          <div>
-            <h2>
-              A closer look
-              <br />
-              at my background.
-            </h2>
-            <p>
-              Experience, technical skills and selected projects in one place.
-            </p>
-          </div>
-          <div className="resume-actions">
-            <a
-              className="primary-link"
-              href={`data:text/plain;charset=utf-8,${encodeURIComponent(resume)}`}
-              download="Sanjana-Resume.txt"
-            >
-              Download resume <Download size={20} />
-            </a>
-            <button
-              className="text-link"
-              onClick={() => setResumeOpen(!resumeOpen)}
-              aria-expanded={resumeOpen}
-              aria-controls="resume-preview"
-            >
-              {resumeOpen ? "Close" : "Read"} resume{" "}
-              {resumeOpen ? <Minus size={18} /> : <Plus size={18} />}
-            </button>
-            <span className="file-type">Text document</span>
-          </div>
-          <div
-            id="resume-preview"
-            className="resume-preview"
-            hidden={!resumeOpen}
-          >
-            <pre>{resume}</pre>
-            <button className="text-link" onClick={() => window.print()}>
-              Print / save as PDF <ArrowUpRight size={18} />
-            </button>
-          </div>
-        </section>
-
-        <section id="contact" className="contact-section wrap">
-          <h2>
-            Good interfaces
-            <br />
-            start with a<br />
-            <span>conversation.</span>
-          </h2>
-          <div className="contact-content">
-            <p>
-              Have an interesting front-end challenge?
-              <br />
-              I’d love to hear about it.
-            </p>
-            {profile.email ? (
-              <a className="primary-link" href={`mailto:${profile.email}`}>
-                Email Sanjana <ArrowUpRight size={22} />
-              </a>
-            ) : (
-              <p className="contact-pending">Contact details coming soon.</p>
-            )}
-            <a className="text-link" href="#resume">
-              Read my background <ArrowRight size={18} />
-            </a>
-          </div>
-        </section>
-      </main>
-      <footer className="site-footer wrap">
-        <a className="wordmark" href="#home">
-          Sanjana<span>.dev</span>
-        </a>
-        <p>© {new Date().getFullYear()} Sanjana</p>
-        <a className="text-link" href="#home">
-          Back to top <ArrowUpRight size={17} />
-        </a>
-      </footer>
-    </div>
-  );
+const asset = (file: string) => `${import.meta.env.BASE_URL}${file}`
+const reduceQuery = '(prefers-reduced-motion: reduce)'
+type Panel = 'project' | 'about' | 'experience' | 'resume' | 'contact' | null
+function Label({ text }: { text: string }) {
+  return <span className="decode"><span className="decode-width" aria-hidden="true">{text}</span><span className="decode-face" data-label={text} aria-hidden="true">{text}</span><span className="sr-only">{text}</span></span>
 }
 
-export default App;
+function App() {
+  const [active, setActive] = useState(chapterFromHash)
+  const [display, setDisplay] = useState(chapterFromHash)
+  const [systemReduced, setSystemReduced] = useState(() => matchMedia(reduceQuery).matches)
+  const [motion, setMotion] = useState(() => !matchMedia(reduceQuery).matches)
+  const [entering, setEntering] = useState(true)
+  const [menu, setMenu] = useState(false)
+  const [panel, setPanel] = useState<Panel>(null)
+  const [imageFailed, setImageFailed] = useState(false)
+  const root = useRef<HTMLDivElement>(null)
+  const backdrop = useRef<HTMLDivElement>(null)
+  const panelRef = useRef<HTMLDialogElement>(null)
+  const menuRef = useRef<HTMLButtonElement>(null)
+  const triggerRef = useRef<HTMLElement | null>(null)
+  const transitionRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const enabled = motion && !systemReduced
+  const current = chapters[display]
+  const selected = chapters[active]
+  const projectIndex = Math.max(0, selected.project)
+  const project = projects[projectIndex]
+  const resumeHref = `data:text/plain;charset=utf-8,${encodeURIComponent(resume)}`
+
+  const openPanel = (kind: Panel) => {
+    triggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    setMenu(false)
+    setPanel(kind)
+  }
+  const closePanel = () => {
+    setPanel(null)
+    requestAnimationFrame(() => triggerRef.current?.focus())
+  }
+  const choose = (index: number) => {
+    setMenu(false)
+    setActive(index)
+    window.history.replaceState(null, '', `#${chapters[index].id}`)
+  }
+  const step = (direction: number) => choose((active + direction + chapters.length) % chapters.length)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setEntering(false), 1800)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const query = matchMedia(reduceQuery)
+    const change = () => setSystemReduced(query.matches)
+    query.addEventListener('change', change)
+    return () => query.removeEventListener('change', change)
+  }, [])
+
+  useEffect(() => {
+    if (transitionRef.current) clearTimeout(transitionRef.current)
+    transitionRef.current = setTimeout(() => setDisplay(active), enabled ? 380 : 0)
+    return () => { if (transitionRef.current) clearTimeout(transitionRef.current) }
+  }, [active, enabled])
+
+  useEffect(() => {
+    const change = () => setActive(chapterFromHash())
+    window.addEventListener('hashchange', change)
+    return () => window.removeEventListener('hashchange', change)
+  }, [])
+
+  useEffect(() => {
+    const dialog = panelRef.current
+    if (panel && dialog && !dialog.open) dialog.showModal()
+    if (!panel && dialog?.open) dialog.close()
+  }, [panel])
+
+  useEffect(() => {
+    if (!menu) return
+    const first = root.current?.querySelector<HTMLElement>('.navset a')
+    first?.focus()
+    const key = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setMenu(false); menuRef.current?.focus() }
+    }
+    const outside = (event: PointerEvent) => {
+      if (event.target instanceof Element && !event.target.closest('.masthead')) setMenu(false)
+    }
+    const resize = () => { if (innerWidth > 830) setMenu(false) }
+    window.addEventListener('keydown', key)
+    window.addEventListener('pointerdown', outside)
+    window.addEventListener('resize', resize)
+    return () => {
+      window.removeEventListener('keydown', key)
+      window.removeEventListener('pointerdown', outside)
+      window.removeEventListener('resize', resize)
+    }
+  }, [menu])
+
+  useEffect(() => {
+    const container = root.current
+    if (!container || !enabled) return
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const cleanup: (() => void)[] = []
+    container.querySelectorAll<HTMLElement>('a,button').forEach(control => {
+      const face = control.querySelector<HTMLElement>('.decode-face')
+      if (!face) return
+      let raf = 0
+      let timeout: ReturnType<typeof setTimeout> | undefined
+      const settle = () => {
+        cancelAnimationFrame(raf)
+        clearTimeout(timeout)
+        face.textContent = face.dataset.label || ''
+      }
+      const decode = () => {
+        settle()
+        const text = face.dataset.label || ''
+        const start = performance.now()
+        let last = 0
+        let random = [...text].map(() => alphabet[Math.floor(Math.random() * 26)])
+        const tick = (now: number) => {
+          const progress = Math.min(1, (now - start) / 400)
+          if (now - last > 45) { random = [...text].map(() => alphabet[Math.floor(Math.random() * 26)]); last = now }
+          const front = progress * text.length
+          face.textContent = [...text].map((char, index) => index < front ? char : index < front + 3.6 ? char === ' ' ? ' ' : random[index] : '').join('')
+          if (progress < 1) raf = requestAnimationFrame(tick)
+          else settle()
+        }
+        raf = requestAnimationFrame(tick)
+        timeout = setTimeout(settle, 900)
+      }
+      control.addEventListener('pointerenter', decode)
+      control.addEventListener('focus', decode)
+      cleanup.push(() => { settle(); control.removeEventListener('pointerenter', decode); control.removeEventListener('focus', decode) })
+    })
+    return () => cleanup.forEach(fn => fn())
+  }, [enabled, display, menu, panel])
+
+  useEffect(() => {
+    const bg = backdrop.current
+    if (!bg) return
+    if (!enabled) { bg.style.transform = ''; return }
+    let tx = 0, ty = 0, x = 0, y = 0, raf = 0, running = false
+    const tick = () => {
+      x += (tx - x) * .045
+      y += (ty - y) * .045
+      const dx = -x * innerWidth * .0156, dy = -y * innerHeight * .015
+      const scale = 1 + 2 * Math.max(Math.abs(dx) / innerWidth, Math.abs(dy) / innerHeight) + .014 * Math.max(0, y)
+      bg.style.transform = `translate3d(${dx.toFixed(2)}px,${dy.toFixed(2)}px,0) scale(${scale.toFixed(4)})`
+      if (Math.abs(tx - x) < .0004 && Math.abs(ty - y) < .0004) { running = false; return }
+      raf = requestAnimationFrame(tick)
+    }
+    const wake = () => { if (!running) { running = true; raf = requestAnimationFrame(tick) } }
+    const move = (event: PointerEvent) => {
+      if (event.pointerType === 'touch' || panelRef.current?.open) return
+      tx = event.clientX / innerWidth * 2 - 1
+      ty = event.clientY / innerHeight * 2 - 1
+      wake()
+    }
+    const reset = () => { tx = 0; ty = 0; wake() }
+    const visibility = () => { if (document.hidden) { cancelAnimationFrame(raf); running = false } }
+    window.addEventListener('pointermove', move, { passive: true })
+    document.addEventListener('pointerleave', reset)
+    document.addEventListener('visibilitychange', visibility)
+    return () => {
+      cancelAnimationFrame(raf)
+      bg.style.transform = ''
+      window.removeEventListener('pointermove', move)
+      document.removeEventListener('pointerleave', reset)
+      document.removeEventListener('visibilitychange', visibility)
+    }
+  }, [enabled])
+
+  const action = () => {
+    if (display === 0) choose(1)
+    else if (current.project >= 0) openPanel('project')
+    else openPanel(current.id === 'about' ? 'about' : 'experience')
+  }
+
+  return (
+    <div ref={root} className={`cinema ${enabled ? 'motion-enabled' : 'motion-disabled'} ${menu ? 'nav-open' : ''} ${entering ? 'entering' : ''}`}>
+      <a className="skip-link" href="#hero">Skip to portfolio content</a>
+      <div className="scene-world" ref={backdrop} aria-hidden="true">
+        <div className="developer-backdrop" />
+        <div className={`project-scene intro-scene ${selected.project < 0 ? 'scene-on' : ''}`}>
+          <div className="project-plane"><span className="laptop-camera" />
+            <div className="studio-screen">
+              <div className="studio-toolbar"><span className="window-dots">● ● ●</span><span>studio / interface.tsx</span><span>LIVE PREVIEW ↗</span></div>
+              <div className="studio-workspace">
+                <div className="studio-code"><span className="code-caption">EXPLORER / SRC</span><span className="code-file">◇ interface.tsx</span><div className="code-lines"><span><i>01</i><b>export default</b> function</span><span><i>02</i>Portfolio() {'{'}</span><span><i>03</i>  <b>return</b> (</span><span><i>04</i>    &lt;<em>main</em>&gt;</span><span><i>05</i>      &lt;<em>Interface</em></span><span><i>06</i>        craft=<strong>"with care"</strong></span><span><i>07</i>      /&gt;</span><span><i>08</i>    &lt;/<em>main</em>&gt;</span><span><i>09</i>  )</span><span><i>10</i>{'}'}<span className="code-caret">▍</span></span></div><span className="code-status">◉ React + TypeScript</span></div>
+                <div className="studio-preview"><div className="preview-top"><span>S /</span><span>DESIGN → BUILD</span></div><div className="preview-content"><span className="preview-eyebrow">MADE IN THE BROWSER</span><div className="preview-title">Ideas.<br /><span>Made real.</span></div><div className="preview-composition"><div className="composition-strip" /><div className="composition-block"><span>01 / INTERFACE</span><div className="composition-bars"><i /><i /><i /><i /><i /></div></div><div className="composition-caption">A little structure.<br />A lot of possibility.</div></div><span className="preview-link">EXPLORE THE POSSIBILITIES ↗</span></div><div className="studio-pointer"><MoveUpRight size={15} /><span>Sanjana</span></div><span className="preview-selection" /></div>
+              </div>
+            </div>
+          </div><div className="laptop-base"><span /></div>
+        </div>
+        {projects.map((item, index) => <div className={`project-scene ${selected.project === index ? 'scene-on' : ''}`} key={item.title}><div className="project-plane"><span className="laptop-camera" /><img src={asset(item.image)} alt="" loading={index === 0 ? 'eager' : 'lazy'} /></div><div className="laptop-base"><span /></div><div className="plane-reflection"><img src={asset(item.image)} alt="" /></div></div>)}
+        <div className="scene-shade" />
+      </div>
+
+      <div className="perimeter">
+        <span className="edge edge-top" /><span className="edge edge-right" /><span className="edge edge-bottom" /><span className="edge edge-left" />
+        <span className="corner corner-tl" /><span className="corner corner-tr" /><span className="corner corner-bl" /><span className="corner corner-br" />
+
+        <a className="brand" href="#home" onClick={event => { event.preventDefault(); choose(0) }} aria-label="Sanjana home"><span>SANJANA</span><span className="brand-mark" aria-hidden="true">/</span></a>
+        <nav className="masthead" aria-label="Main navigation">
+          <div className="navset" id="navigation-panel">
+            <div className="navlinks">
+              <a href="#projects" onClick={event => { event.preventDefault(); choose(1) }}><Label text="WORK" /></a>
+              <a href="#about" onClick={event => { event.preventDefault(); choose(4) }}><Label text="ABOUT" /></a>
+              <a href="#experience" onClick={event => { event.preventDefault(); choose(5) }}><Label text="EXPERIENCE" /></a>
+              <button onClick={() => openPanel('contact')}><Label text="CONNECT" /></button>
+            </div>
+            <button className="pill resume-pill" onClick={() => openPanel('resume')}><Download size={12} /><Label text="RESUME" /></button>
+          </div>
+          <button ref={menuRef} className="pill menu-pill" aria-label={menu ? 'Close navigation' : 'Open navigation'} aria-expanded={menu} aria-controls="navigation-panel" onClick={() => setMenu(!menu)}><Grid2X2 size={13} /><Label text={menu ? 'CLOSE' : 'MENU'} /></button>
+        </nav>
+
+        <nav className="chapter-rail" aria-label="Portfolio chapters"><ol>{chapters.map((chapter, index) => <li className={active === index ? 'chapter-on' : ''} key={chapter.id}><a href={`#${chapter.id}`} aria-current={active === index ? 'page' : undefined} onClick={event => { event.preventDefault(); choose(index) }}><Label text={chapter.label} /></a></li>)}</ol></nav>
+
+        <main className={`hero ${active !== display ? 'swapping' : ''}`} id="hero" tabIndex={-1}>
+          <div className="hero-copy" key={display}>
+            <h1 className="headline">{current.lines.map(line => <span className="headline-row" key={line}><span className="headline-rise">{line}</span></span>)}</h1>
+            <p className="blurb">{current.description}</p>
+            <button className="scene-cta" onClick={action}><span className="cta-glass" /><Plus size={12} /><Label text={current.action} /><ArrowUpRight size={13} /></button>
+          </div>
+        </main>
+        <p className="sr-only" aria-live="polite">{chapters[active].label}. {chapters[active].lines.join(' ')}</p>
+
+        <div className="dock">
+          <button className="motion-switch" aria-label={enabled ? 'Pause motion' : 'Enable motion'} aria-pressed={enabled} disabled={systemReduced} onClick={() => setMotion(!motion)}>{enabled ? <Pause size={13} /> : <Play size={13} />}<Label text={enabled ? 'MOTION ON' : 'MOTION OFF'} /></button>
+          <div className="chapter-control"><button aria-label="Previous chapter" onClick={() => step(-1)}><ChevronLeft size={15} /></button><span className="chapter-count">{String(active + 1).padStart(2, '0')} <span>/ {String(chapters.length).padStart(2, '0')}</span></span><button aria-label="Next chapter" onClick={() => step(1)}><ChevronRight size={15} /></button></div>
+          <button className="dock-connect" onClick={() => openPanel('resume')}><Label text="READ RESUME" /><MoveUpRight size={15} /></button>
+        </div>
+      </div>
+
+      <dialog ref={panelRef} className="detail-dialog" aria-labelledby="panel-title" onCancel={event => { event.preventDefault(); closePanel() }} onClick={event => { if (event.target === event.currentTarget) closePanel() }}>
+        <div className="detail-panel">
+          <div className="panel-top"><span className="panel-wordmark">SANJANA /</span><button className="close-panel" onClick={closePanel} aria-label="Close details"><Label text="CLOSE" /><X size={19} /></button></div>
+          <div className="panel-body">
+            {panel === 'project' && <><h2 id="panel-title">{project.title}</h2><p className="panel-intro">{project.description}</p>{!imageFailed ? <img className="detail-image" src={asset(project.image)} alt={`${project.title} project mockup`} onError={() => setImageFailed(true)} /> : <p>Project preview unavailable. The project information is below.</p>}<p className="image-caption">Project mockup from the original portfolio.</p><h3>What’s inside</h3><ul>{project.features.map(feature => <li key={feature}>{feature}</li>)}</ul><h3>Built with</h3><p>{project.stack.join(' · ')}</p><div className="project-destinations">{project.demo ? <a href={project.demo} target="_blank" rel="noopener noreferrer">Live demo <ArrowUpRight size={15} /></a> : <span>Live demo not available yet.</span>}{project.repository && <a href={project.repository} target="_blank" rel="noopener noreferrer">View source <ArrowUpRight size={15} /></a>}</div><div className="panel-pager"><button onClick={() => { setImageFailed(false); choose(active === 3 ? 1 : active + 1) }}>Next project <ArrowUpRight size={17} /></button></div></>}
+            {panel === 'about' && <><h2 id="panel-title">Sanjana.</h2><p className="panel-intro">Front-end developer. React and TypeScript.</p><img className="portrait" src={profilePhoto} alt="Sanjana" /><p>I develop responsive web applications and enjoy the work between design and implementation: translating Figma layouts, solving stateful problems, and building clean, reusable components.</p><h3>My everyday stack</h3><p>React.js, TypeScript, JavaScript, HTML5, CSS3, Material UI, Tailwind CSS, Redux, Context API, REST APIs, Axios and Git.</p><button className="panel-action" onClick={() => { choose(5); setPanel('experience') }}>Professional experience <ArrowUpRight size={16} /></button></>}
+            {panel === 'experience' && <><h2 id="panel-title">Professional experience.</h2><div className="job"><h3>{profile.company}</h3><p>{profile.role}<br />{profile.period}</p></div><ul><li>Translate UI/UX designs into responsive React interfaces.</li><li>Build and document reusable components.</li><li>Integrate REST APIs with loading states and error handling.</li><li>Collaborate with designers on layout, transitions and frontend performance.</li></ul><button className="panel-action" onClick={() => setPanel('resume')}>Read my resume <ArrowUpRight size={16} /></button></>}
+            {panel === 'resume' && <><h2 id="panel-title">Resume.</h2><p className="panel-intro">Experience, skills and selected projects.</p><div className="resume-tools"><a className="panel-action" href={resumeHref} download="Sanjana-Resume.txt">Download text <Download size={16} /></a><button className="panel-action" onClick={() => window.print()}>Print / save PDF <ArrowUpRight size={16} /></button></div><pre className="resume-text">{resume}</pre></>}
+            {panel === 'contact' && <><h2 id="panel-title">Connect.</h2><p className="panel-intro">Have a front-end role or project in mind?</p>{profile.email ? <a className="panel-action" href={`mailto:${profile.email}`}>{profile.email} <ArrowUpRight size={16} /></a> : <p>Contact details will be added soon.</p>}<p>In the meantime, you can read or download my background.</p><button className="panel-action" onClick={() => setPanel('resume')}>Open resume <ArrowUpRight size={16} /></button></>}
+          </div>
+          <div className="panel-bottom"><span>FRONT-END DEVELOPMENT</span><ArrowDown size={15} /></div>
+        </div>
+      </dialog>
+    </div>
+  )
+}
+export default App

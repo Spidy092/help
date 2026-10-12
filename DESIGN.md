@@ -1,170 +1,156 @@
 ---
-name: Sanjana Portfolio
-description: A motion-led front-end developer portfolio
+name: Sanjana Cinematic Portfolio
+description: Six portfolio chapters inside a dark cinematic interface.
 colors:
-  paper: "#eef1f6"
-  ink: "#20242a"
-  muted: "#545d6e"
-  line: "#c9cfdb"
-  blue: "#2d4fc9"
-  panel: "#e2e8f1"
-  image-stage: "#dce3f1"
-  white: "#fff"
-  button-text: "#fff"
-  dark-paper: "#191e29"
-  dark-ink: "#eef1f6"
-  dark-muted: "#b4bdcd"
-  dark-line: "#3b4659"
-  dark-blue: "#a5b6ff"
-  dark-panel: "#232c3d"
-  dark-image-stage: "#2b354b"
-  dark-white: "#202938"
-  dark-button-text: "#171e31"
+  night: "#04070d"
+  panel: "#0d141e"
+  cream: "#e8d1cb"
+  ink: "#15131b"
+  text: "#f2f3f7"
+  headline: "#ffffff"
+  body: "#c4cedd"
+  muted: "#8d98aa"
+  line: "rgba(255,255,255,.18)"
+  glass: "rgba(255,255,255,.035)"
 typography:
   display:
-    fontFamily: "Barlow Condensed, sans-serif"
-    fontSize: "clamp(72px, 8.1vw, 96px)"
+    fontFamily: "Inter, sans-serif"
+    fontSize: "calc(31.5 * var(--t))"
     fontWeight: 700
-    lineHeight: 0.96
-    letterSpacing: "-0.025em"
-  headline:
-    fontFamily: "Barlow Condensed, sans-serif"
-    fontSize: "clamp(48px, 5.2vw, 76px)"
-    fontWeight: 600
-    lineHeight: 0.96
-    letterSpacing: "-0.025em"
-  role:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "30px"
-    fontWeight: 500
-    lineHeight: 1.25
-    letterSpacing: "-0.035em"
+    lineHeight: "calc(34 * var(--t))"
+    letterSpacing: "calc(1.1 * var(--t))"
   body:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "14px"
-    lineHeight: 1.9
+    fontFamily: "Inter, -apple-system, Helvetica Neue, Arial, sans-serif"
+    fontSize: "calc(11.5 * var(--t))"
+    fontWeight: 400
+    lineHeight: "calc(20 * var(--t))"
   label:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "12px"
-    fontWeight: 600
+    fontFamily: "Chakra Petch, sans-serif"
+    fontSize: "calc(10 * var(--t))"
+    fontWeight: 700
+  panel-title:
+    fontFamily: "Inter, sans-serif"
+    fontSize: "38px"
+    fontWeight: 700
+    lineHeight: "1.15"
+    letterSpacing: "-.035em"
 rounded:
-  thumbnail: "4px"
-  stage-image: "5px"
-  project-image: "8px"
-  disclosure: "12px"
-  stage: "14px"
-  circular: "50%"
+  square: "0"
 spacing:
-  header-action-gap: "8px"
-  storyboard-gap: "18px"
-  nav-gap: "24px"
-  project-column-gap: "36px"
-  hero-column-gap: "52px"
+  panel-inline: "36px"
+  panel-mobile-inline: "22px"
 components:
-  primary-link:
-    backgroundColor: "{colors.blue}"
-    textColor: "{colors.button-text}"
-    padding: "18px 22px"
-  icon-button:
-    rounded: "{rounded.circular}"
-    width: "40px"
-    height: "40px"
-  icon-button-hover:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-  project-details:
+  menu-button:
+    backgroundColor: "{colors.cream}"
+    textColor: "{colors.ink}"
+    typography: "{typography.label}"
+    height: "calc(41 * var(--t))"
+    padding: "0 calc(20 * var(--t))"
+  scene-button:
+    backgroundColor: "{colors.glass}"
+    textColor: "#e9eef7"
+    typography: "{typography.label}"
+    padding: "0 calc(19 * var(--t))"
+  detail-panel:
     backgroundColor: "{colors.panel}"
-    rounded: "{rounded.disclosure}"
-    padding: "24px"
+    textColor: "#e9edf4"
+    width: "min(650px, 100vw)"
+    height: "100dvh"
 ---
 
-# Design System: Sanjana Portfolio
+# Design System: Sanjana Cinematic Portfolio
 
 ## Overview
 
-**Creative North Star: "Motion Storyboard"**
+**Creative North Star: “The Cinematic Interface”**
 
-Project interfaces become selectable storyboard frames. Cool porcelain, cobalt and graphite keep the presentation crisp; condensed display typography gives the developer’s name and section headings a strong editorial rhythm.
+The built portfolio adapts the user-supplied Stratum framing and navigation grammar to Sanjana's existing career and project content. A single fixed viewport holds a smoked-glass sculpture, a fine chamfered perimeter, a left chapter rail, a lower-center headline and a three-part bottom dock. The image supplies atmosphere; the frame and controls supply orientation.
 
-Motion supports exploration through a tilted featured stage, directional image reveals and scroll-linked project images. Project descriptions, career information and honest availability states remain readable without animation.
+Six manually selected chapters cover Introduction, SocialPoster, Event Booking, Job Portal, About and Experience. Project chapters dim the sculpture and place existing project mockups in a tilted plane with a faint reflected image. Detailed reading moves into a native dialog at the right edge. This is the current dark presentation; the previous porcelain/cobalt scrolling storyboard and theme switch are no longer the design system.
 
 **Key Characteristics:**
-- Selectable project storyboard
-- Condensed headings and clear sans-serif body copy
-- Matte image stages with restrained shadows
-- Light and dark palettes with shared semantic roles
-- Motion that respects reduced-motion preferences
+- Navy-black environment, white type and pale blush controls.
+- Inter display/body with uppercase Chakra Petch navigation labels.
+- Chamfered framing and restrained translucent controls.
+- Manual chapter navigation with clear active and count states.
+- Local motion toggle and system reduced-motion support.
 
 ## Colors
 
-The palette pairs cool porcelain surfaces with cobalt actions and graphite text. `src/index.css` is the normative color source; the frontmatter preserves its values. The sidecar’s eight-step OKLCH tonal ramps are synthesized panel previews, not additional implemented application tokens.
+The UI palette stays cool and subdued. Warm illumination belongs to the sculpture image rather than a separate UI accent.
 
 ### Primary
-
-- **Cobalt (`blue`)** marks the hero name, heading accents, links, selected storyboard rules and focus outlines.
-- **Pale cobalt (`dark-blue`)** replaces the accent in dark mode; dark primary buttons use `dark-button-text` for their text.
+- **Pale blush** (`cream`): menu fill, slash wordmark, active chapter marker, focus outline and panel actions.
 
 ### Neutral
-
-- `paper` is the page and header background; `ink` is primary text; `muted` is descriptions and metadata; `line` is borders and separators.
-- `panel` is disclosure and portrait backing; `image-stage` is the matte mockup field; `white` is the featured stage, circular image actions and resume preview. The semantic name `white` becomes a blue-gray surface in dark mode.
-- Dark mode replaces all nine semantic roles through `:root[data-theme="dark"]`. The toggle persists `portfolio-theme` in localStorage; a fresh session defaults to light, rather than following the operating system.
+- **Night** (`night`): fixed cinema and page background.
+- **Deep navy panel** (`panel`): native detail dialog and sticky panel header.
+- **Warm ink** (`ink`): menu text and selection text.
+- **White** (`headline`) and **soft white** (`text`): chapter headline and default text.
+- **Cool body** (`body`): centered description.
+- **Muted steel** (`muted`): inactive chapter links and chapter-count denominator.
+- **Fine line** (`line`): frame, dock divisions and panel separators.
+- **Smoked glass** (`glass`): scene action surface; its hover fill rises to `rgba(255,255,255,.09)`.
 
 ## Typography
 
-**Display Font:** Barlow Condensed, sans-serif. Self-hosted through Fontsource Latin files at weights 600 and 700.
+**Display and Body Font:** locally bundled Inter, weights 700 and 400.
+**Label Font:** locally bundled Chakra Petch, weight 700.
 
-**Body Font:** Manrope, sans-serif. Self-hosted through Fontsource Latin files at weights 400, 500 and 600. The wordmark requests 700, although no Manrope 700 file is imported; global `font-synthesis: none` is set.
+Display text is uppercase and compact. Technical labels are small, tracked and stable in width during the decode animation. Body descriptions remain sentence case.
 
-- Hero display: 700, `clamp(72px, 8.1vw, 96px)`, line-height `.96`, tracking `-.025em`, uppercase, no wrapping. At ≤1100px it is 90px; at ≤767px it becomes `clamp(74px, 19vw, 96px)`.
-- Section headings: 600, `clamp(48px, 5.2vw, 76px)`, line-height `.96`, tracking `-.025em`; 52px on mobile. Contact uses `clamp(56px, 6.3vw, 88px)` and 62px on mobile.
-- Role statement: 500, 30px/1.25, tracking `-.035em`; 24px at ≤1100px and 25px at ≤767px.
-- Body: hero description 14px/1.9 at 355px maximum width; project descriptions 13px/1.85 at 600px maximum; about copy 15px/1.9 at 490px maximum. Mobile sizes are 13px, 12px and 13px respectively.
-- Project titles: Manrope 22px with `-.04em` tracking, 20px on mobile. Navigation is 12px/600, 11px at ≤1100px and 14px in the mobile menu. Metadata generally spans 9–11px. Frame counts use tabular numerals.
+- **Display:** frontmatter scale on desktop; 34px/36px below 830px; `clamp(23px,6.4vw,32px)` with 1.12 line height below 548px. Desktop lines are separate blocks; mobile joins them into wrapping inline text.
+- **Body:** centered at a maximum `calc(460 * var(--t))` width; mobile uses 11px/19px and 360px maximum width.
+- **Label:** approximately 10px at the reference scale, with 1.2 scale units of tracking on the rail. The brand uses bold Inter with a Chakra Petch slash.
+- **Panel title:** 38px on desktop, 30px below 548px. Panel prose uses 13px/1.9; the intro uses 15px/1.8, reduced to 13px on mobile.
 
 ## Layout
 
-The desktop wrapper is `min(1280px, calc(100% - 112px))`, centered. The header is 88px tall with 56px horizontal padding. It is relative, not sticky. The hero has `1fr 1.06fr` columns, `36px 52px` gaps, 60px top and 48px bottom padding, and 720px minimum height. Its three-column storyboard spans both columns.
+The document and root fill the viewport; body scrolling is disabled. `.cinema` is fixed with hidden overflow. Desktop geometry uses `--u: clamp(.68px,min(100vw / 1280,100dvh / 800),1.72px)` and `--t: var(--u)`. The perimeter is inset by roughly 30 scale units; its corners are cut over 26 scale units. The brand sits top-left, masthead top-right, rail left-center, hero lower-center and dock at the bottom inside the frame.
 
-Work uses two columns with `60px 36px` gaps; the first project spans both. Default image stages have aspect ratio 1.55 and 35px padding; the featured project uses 2.2 and `50px 15%`. About uses `.75fr 1fr` with an 11% gap. Skills and experience use `1fr 1.3fr` with 70px gaps. Resume uses `1fr auto`; contact uses `1.2fr 1fr` with an 80px gap. Generous section padding ranges from 70px to 100px on desktop.
+Project planes use 530 × 310 scale units, positioned at 50% horizontal and 36% vertical, with perspective rotation. Mobile retains the cinematic composition, moving the rail to the upper-left below the wordmark and cropping the sculpture vertically. At 830px and below, navigation links and resume move into the menu surface. At 548px and below, the hero sits 78px above the frame bottom and the dock uses smaller labels. At 370px and below, the dock wraps into two rows. Short-height rules compact the headline and hide the blurb on small screens.
 
-- **≥1600px:** hero minimum height 770px, vertically centered; name 96px.
-- **≤1100px:** wrapper subtracts 64px, header padding 32px, hero minimum height 650px with `35px 25px` gaps; thumbnail width 54px; stage image ratio 1.3. Skills/experience gaps reduce to 40px, contact to 45px.
-- **≤767px:** wrapper subtracts 40px, header 72px with 20px padding. Main section grids and storyboard stack into one column. Work images use ratio 1.5 and 26px padding. Hero has no minimum height. Mobile section padding is generally 30–65px. Skill lists retain three columns. Portrait is 85% wide, max 360px, ratio 1.08. Navigation becomes a two-column menu below the header; footer wraps.
-
-The body has a 320px minimum width. Anchor scrolling is smooth with 95px scroll padding. Print CSS isolates the opened resume preview, uses white/black and 11pt resume text; this is browser print output, not a committed PDF.
+The native dialog is independently scrollable, full viewport height, up to 650px wide, and flush to the right. It becomes full width on small screens. Its header remains sticky; panel body padding is 50px 36px 40px, reduced to 35px 22px on mobile.
 
 ## Elevation & Depth
 
-Depth comes from matte tonal fields, image layering and a featured stage rotated -3 degrees. Two structural shadows are implemented: stage `0 22px 42px -20px #15254850`; project mockup `0 20px 28px -16px #16214466`. The selected frame has `inset 0 2px var(--blue)` plus an accent top rule. Both themes use the same shadow declarations.
+Depth comes from the sculpture raster, the dimmed background in project chapters, a tilted mockup plane and its blurred reflection. UI glass uses backdrop blur of 12px; navigation uses 16px. The dialog backdrop darkens and blurs the scene by 8px.
+
+- **Project plane:** `0 28px 90px -22px rgba(0,0,0,.8)`.
+- **Detail dialog:** `-25px 0 90px rgba(0,0,0,.45)`.
+- **Reflection:** 0.16 opacity, 3px blur, vertical flip and a transparent-to-black mask.
 
 ## Shapes
 
-The primary link is rectangular. Icon buttons and image action buttons are circular. Radii are 4px for thumbnails, 5px for the stage image, 8px for project images, 12px for details/resume panels and 14px for stages/portrait. One-pixel rules structure navigation and section boundaries. Tech labels are plain text separated by 15px gaps.
+The main silhouette is a fine rectangular frame with diagonal chamfers. Menu and scene actions also use polygon clipping; they do not use rounded pill geometry despite the internal `.pill` class name. Detail panels, project planes and secondary panel buttons remain square. Dividers are one pixel and translucent.
 
 ## Components
 
-- **Primary link:** accent fill, button-text foreground, 13px/600, 18px 22px padding, minimum height 54px. Hover expands its arrow gap from 30px to 42px over .25s.
-- **Icon button:** 40px circle, one-pixel line border; ink fill/paper foreground on hover over .2s. Storyboard previous/next controls use 34px circles.
-- **Navigation:** seven section anchors, closing the mobile menu on selection. A 2px accent underline grows over .2s on hover. Menu button exposes `aria-expanded`; Escape closes the menu.
-- **Storyboard:** three manual selectors with `aria-pressed`. Previous/next wrap modulo three. Selected border and inset rule show state; hover scales thumbnails to 1.06 over .3s. The current title has `aria-live="polite"`. No timer advances projects.
-- **Project card:** image button and text toggle share a disclosure state with `aria-expanded` and `aria-controls`. Only one project can be expanded at a time. The 48px arrow action rotates 45 degrees on hover over .25s (40px on mobile). Hidden detail panels use the `hidden` attribute.
-- **Resume:** plain text download, inline text preview and browser print action. Preview toggle exposes expanded state. Contact displays a pending message until verified email is supplied; empty demo/repository URLs do not render links. No input form is implemented.
+### Scene action
+A transparent chamfered button with a glass layer, plus icon, uppercase label and outward arrow. Hover brightens the glass. Minimum height is 42 scale units on desktop and 44px at responsive sizes, with short-height compaction. Focus is a blush outline inset by 4px.
 
-### Motion and accessibility
+### Masthead and menu
+Desktop links, resume and blush MENU control share a horizontal line. MENU can open an overlay on desktop as well as mobile. The overlay uses a dark translucent surface; mobile adds clipped corners. Open state sets `aria-expanded`, focuses the first link and supports Escape and outside pointer dismissal.
 
-GSAP runs its entrance/scroll timelines only under `prefers-reduced-motion: no-preference`. Hero text rises from y=32 with an 80% lower clip to y=0/unclipped over 1.1s `expo.out`. Stage starts at rotation 0/y=24 and settles at -3°/y=0 over 1.3s `expo.out`. Work images move from y=28 to -16 between `top bottom` and `bottom top`, linear with ScrollTrigger `scrub: 1`. Selecting a project reveals its image from a right-side 100% clip and scale 1.025 to unclipped/scale 1 over .65s `expo.out`.
+### Chapter rail and dock
+The six chapter links retain hashes and mark the current chapter with `aria-current="page"`, brighter text and a blush block to the left. Previous/next dock buttons wrap through all six chapters, with a two-digit count. The dock also holds MOTION ON/OFF and READ RESUME.
 
-Reduced motion disables these GSAP sequences, removes stage rotation and work-image transforms, changes smooth scrolling to auto and reduces CSS animation/transition durations to .01ms. Buttons and links have a 3px accent focus outline with 5px offset. A keyboard-visible skip link targets main content. Informative mockups use alt text; duplicate selector thumbnails are decorative. Controls are native buttons/links, with labels on icon-only actions. These are implementation facts, not a claim of a completed accessibility certification.
+### Native detail panel
+Project, biography, experience, resume and contact views share a native `dialog` opened with `showModal()`. A close control, sticky wordmark header and footer frame the content. Close returns focus to the invoking element. Project details use an uncropped reading image, descriptive prose and a next-project action. Resume offers the existing text download and print workflow. Contact availability remains explicit where destinations are unverified.
+
+### Motion
+The entry draws frame edges, raises masked headline lines and settles controls in a stagger. Chapter text swaps after 380ms, while scenes crossfade over 900ms. Hover/focus labels decode over 400ms without changing their reserved width. Pointer parallax applies to the decorative world, ignores touch and stops when motion is disabled. The local toggle is session state; it does not persist across reloads. System reduced motion disables the toggle and removes CSS transitions and animations.
 
 ## Do's and Don'ts
 
-- Use semantic CSS variables so both themes remain coherent.
-- Keep the project mockups and verified career information central.
-- Use explicit button labels, visible keyboard focus and honest unavailable-link states.
-- Preserve the reduced-motion fallback and responsive stacking.
+### Do:
+- **Do** preserve the supplied Stratum composition while using Sanjana's verified portfolio content.
+- **Do** keep chapter selection manual, hashes meaningful and detail reading in the native panel.
+- **Do** use the fine chamfered frame, square panel geometry and restrained blush accent consistently.
+- **Do** retain visible focus, accessible label text, focus restoration and both motion fallbacks.
 
-- Do not invent contact destinations, project outcomes or downloadable PDF files.
-- Do not add autoplay to the manual project selector.
-- Do not turn every text label into a pill or every section into a card.
-- Do not hard-code the light palette into interactive controls.
+### Don't:
+- **Don't** reintroduce the stale light/cobalt palette, condensed type or scrolling storyboard rules.
+- **Don't** make the decorative sculpture or project scene an inaccessible source of essential text.
+- **Don't** invent project outcomes, contact destinations or a PDF resume.
+- **Don't** add automatic chapter playback or persist the motion toggle without an intentional behavior change.

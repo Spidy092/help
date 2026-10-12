@@ -1,10 +1,10 @@
 # Portfolio surface
-Mode: Experience. User delegated concept execution after choosing experimental, motion-led showcase.
+Mode: Experience. Reference: user-supplied Stratum hero specification on 2026-10-11.
 
 ## Direction contract
-THESIS: Project interfaces become large selectable storyboard frames.
-OWN-WORLD: Cool porcelain, cobalt and graphite; condensed display type, crisp controls and matte image stages.
-STORY: Explore three projects, inspect implementation details, then read the developer’s background and resume.
-FIRST VIEWPORT: Sanjana’s name and role at left; oversized selected project at right; three frame selectors below, with clear project and details actions.
-FORM: Motion Storyboard, grounded candidate 5; seed db535874. Code-led execution delegated by “do it”; no persistent build preference inferred.
+THESIS: One cinematic screen, six portfolio chapters; the supplied framing, navigation and motion grammar replace the rejected scrolling design.
+OWN-WORLD: Ink navy, white and pale blush; Inter display and Chakra Petch labels; fine chamfered perimeter and restrained glass controls.
+STORY: Meet Sanjana; select three projects; open detailed reading; inspect biography, experience and resume.
+FIRST VIEWPORT: Spatial smoked-glass sculpture centered above the lower-center name and role; wordmark top-left, chapter rail left, controls top-right, three-cell dock below.
+FORM: User-pinned Stratum adaptation; no concept roll. Portfolio content changes, reference grammar persists. Local only.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
