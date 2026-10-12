@@ -1,202 +1,281 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T00:00:00Z",
-  "title": "Design System: Sanjana Cinematic Portfolio",
+  "generatedAt": "2026-10-12T18:17:05.351157+00:00",
+  "title": "Design System: Sanjana — Interface Experiment",
   "extensions": {
     "colorMeta": {
-      "night": {
-        "role": "neutral",
-        "displayName": "Night"
-      },
-      "panel": {
-        "role": "neutral",
-        "displayName": "Deep navy panel"
-      },
-      "cream": {
-        "role": "primary",
-        "displayName": "Pale blush"
-      },
       "ink": {
         "role": "neutral",
-        "displayName": "Warm ink"
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.015 140)",
+          "oklch(27% 0.015 140)",
+          "oklch(39% 0.015 140)",
+          "oklch(51% 0.015 140)",
+          "oklch(63% 0.015 140)",
+          "oklch(75% 0.015 140)",
+          "oklch(87% 0.015 140)",
+          "oklch(95% 0.015 140)"
+        ]
       },
-      "text": {
+      "paper": {
         "role": "neutral",
-        "displayName": "Soft white"
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.015 85)",
+          "oklch(27% 0.015 85)",
+          "oklch(39% 0.015 85)",
+          "oklch(51% 0.015 85)",
+          "oklch(63% 0.015 85)",
+          "oklch(75% 0.015 85)",
+          "oklch(87% 0.015 85)",
+          "oklch(95% 0.015 85)"
+        ]
       },
-      "headline": {
-        "role": "neutral",
-        "displayName": "White"
+      "citron": {
+        "role": "primary",
+        "displayName": "Citron",
+        "tonalRamp": [
+          "oklch(15% 0.18 115)",
+          "oklch(27% 0.18 115)",
+          "oklch(39% 0.18 115)",
+          "oklch(51% 0.18 115)",
+          "oklch(63% 0.18 115)",
+          "oklch(75% 0.18 115)",
+          "oklch(87% 0.18 115)",
+          "oklch(95% 0.18 115)"
+        ]
       },
-      "body": {
-        "role": "neutral",
-        "displayName": "Cool body"
+      "violet": {
+        "role": "secondary",
+        "displayName": "Violet",
+        "tonalRamp": [
+          "oklch(15% 0.18 290)",
+          "oklch(27% 0.18 290)",
+          "oklch(39% 0.18 290)",
+          "oklch(51% 0.18 290)",
+          "oklch(63% 0.18 290)",
+          "oklch(75% 0.18 290)",
+          "oklch(87% 0.18 290)",
+          "oklch(95% 0.18 290)"
+        ]
       },
-      "muted": {
+      "silver": {
         "role": "neutral",
-        "displayName": "Muted steel"
+        "displayName": "Silver",
+        "tonalRamp": [
+          "oklch(15% 0.005 240)",
+          "oklch(27% 0.005 240)",
+          "oklch(39% 0.005 240)",
+          "oklch(51% 0.005 240)",
+          "oklch(63% 0.005 240)",
+          "oklch(75% 0.005 240)",
+          "oklch(87% 0.005 240)",
+          "oklch(95% 0.005 240)"
+        ]
       },
       "line": {
         "role": "neutral",
-        "displayName": "Fine line"
+        "displayName": "Structural line",
+        "tonalRamp": [
+          "oklch(15% 0.012 130)",
+          "oklch(27% 0.012 130)",
+          "oklch(39% 0.012 130)",
+          "oklch(51% 0.012 130)",
+          "oklch(63% 0.012 130)",
+          "oklch(75% 0.012 130)",
+          "oklch(87% 0.012 130)",
+          "oklch(95% 0.012 130)"
+        ]
       },
-      "glass": {
+      "muted": {
         "role": "neutral",
-        "displayName": "Smoked glass"
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.018 120)",
+          "oklch(27% 0.018 120)",
+          "oklch(39% 0.018 120)",
+          "oklch(51% 0.018 120)",
+          "oklch(63% 0.018 120)",
+          "oklch(75% 0.018 120)",
+          "oklch(87% 0.018 120)",
+          "oklch(95% 0.018 120)"
+        ]
       }
     },
     "typographyMeta": {
       "display": {
-        "purpose": "Uppercase lower-center chapter headline"
+        "displayName": "Condensed display",
+        "purpose": "Hero identity."
+      },
+      "headline": {
+        "displayName": "Exhibition headline",
+        "purpose": "Chapter headings."
       },
       "body": {
-        "purpose": "Centered chapter description"
+        "displayName": "Reading copy",
+        "purpose": "Human-readable descriptions."
       },
       "label": {
-        "purpose": "Navigation, chapter rail and controls"
-      },
-      "panel-title": {
-        "purpose": "Detail reading title"
+        "displayName": "Technical annotation",
+        "purpose": "Chapter numbering, metadata and controls."
       }
     },
     "shadows": [
       {
-        "name": "project-plane",
-        "value": "0 28px 90px -22px rgba(0,0,0,.8)",
-        "purpose": "Tilted project mockup"
+        "name": "browser-plane",
+        "value": "13px 22px 32px #0005",
+        "purpose": "Physical paper-plane layering."
       },
       {
         "name": "detail-dialog",
-        "value": "-25px 0 90px rgba(0,0,0,.45)",
-        "purpose": "Right-side native dialog"
+        "value": "0 20px 70px #0008",
+        "purpose": "Modal reading depth."
       }
     ],
     "motion": [
       {
-        "name": "e-mask",
-        "value": "cubic-bezier(.16,1,.3,1)",
-        "purpose": "Masked headline reveal"
+        "name": "assembly",
+        "value": "750ms",
+        "purpose": "Hero plane assembly."
       },
       {
-        "name": "e-line",
-        "value": "cubic-bezier(.65,0,.35,1)",
-        "purpose": "Perimeter draw"
+        "name": "reveal",
+        "value": "450ms",
+        "purpose": "Reversible chapter reveals."
       },
       {
-        "name": "e-soft",
-        "value": "cubic-bezier(.22,.61,.36,1)",
-        "purpose": "Controls settle"
+        "name": "hover",
+        "value": "180ms",
+        "purpose": "Control state response."
       },
       {
-        "name": "chapter-swap",
-        "value": "380ms",
-        "purpose": "Text swap delay when enabled"
+        "name": "overlay",
+        "value": "350ms",
+        "purpose": "Dialog entry."
       },
       {
-        "name": "scene-crossfade",
-        "value": "900ms ease",
-        "purpose": "Project scene and background"
+        "name": "exit",
+        "value": "250ms",
+        "purpose": "Dialog exit."
       },
       {
-        "name": "label-decode",
-        "value": "400ms",
-        "purpose": "Hover and focus labels"
+        "name": "ease",
+        "value": "power3.out",
+        "purpose": "GSAP settling grammar."
+      },
+      {
+        "name": "geometry",
+        "value": "ScrollTrigger + GSAP smoothing",
+        "purpose": "One 12-fragment object follows measured browser/calendar/seat/wall slots; mobile crossfades; motion off restores static slots."
       }
     ],
     "breakpoints": [
       {
-        "name": "compact-max",
-        "value": "1152px"
+        "name": "mobile",
+        "value": "767px"
       },
       {
-        "name": "menu-max",
-        "value": "830px"
+        "name": "tablet-navigation",
+        "value": "1023px"
       },
       {
-        "name": "mobile-max",
-        "value": "548px"
+        "name": "compact-wordmark",
+        "value": "1200px"
       },
       {
-        "name": "small-mobile-max",
-        "value": "370px"
-      },
-      {
-        "name": "short-desktop-max-height",
-        "value": "650px"
-      },
-      {
-        "name": "short-mobile-max-height",
-        "value": "600px"
+        "name": "wide",
+        "value": "1600px"
       }
     ]
   },
   "components": [
     {
-      "name": "Scene action",
+      "name": "Primary action",
       "kind": "button",
-      "refersTo": "scene-button",
-      "description": "Chamfered glass chapter action.",
-      "html": "<button class=\"ds-control ds-action\">+ &nbsp; EXPLORE THE WORK &nbsp; \u2197</button>",
-      "css": ".ds-action{padding:0 19px;min-height:44px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.035);backdrop-filter:blur(12px);color:#e9eef7;font:700 10px \"Chakra Petch\",sans-serif;clip-path:polygon(4px 0,calc(100% - 11px) 0,100% 11px,100% calc(100% - 4px),calc(100% - 4px) 100%,11px 100%,0 calc(100% - 11px),0 4px);transition:background .3s}.ds-action:hover{background:rgba(255,255,255,.09)}.ds-action:focus-visible{outline-offset:-4px}.ds-control:focus-visible{outline:1.5px solid #e8d1cb;outline-offset:4px}"
+      "description": "Square directional action with hover, press and keyboard focus.",
+      "html": "<button class=\"ds-primary\">Explore selected work <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:20px;min-height:50px;padding:16px 22px;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;background:var(--citron,#deff38);color:var(--ink,#111211);border:1px solid var(--citron,#deff38);border-radius:0;cursor:pointer;transition:background .18s,transform .18s}.ds-primary:hover{background:#e6ff75;transform:translateY(-2px);border-color:var(--citron,#deff38)}.ds-primary:active{transform:translateY(1px)}.ds-primary:focus-visible{outline:2px solid var(--citron,#deff38);outline-offset:5px}",
+      "refersTo": "action-primary"
     },
     {
-      "name": "Menu control",
+      "name": "Outline action",
       "kind": "button",
-      "refersTo": "menu-button",
-      "description": "Blush navigation control with one cut corner.",
-      "html": "<button class=\"ds-control ds-menu\">MENU</button>",
-      "css": ".ds-menu{height:44px;padding:0 20px;border:0;color:#15131b;background:#e8d1cb;font:700 10px \"Chakra Petch\",sans-serif;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%)}.ds-menu:hover{background:#f1ddd7}.ds-menu:focus-visible{outline-offset:-4px}.ds-control:focus-visible{outline:1.5px solid #e8d1cb;outline-offset:4px}"
+      "description": "Square directional action with hover, press and keyboard focus.",
+      "html": "<button class=\"ds-outline\">Explore selected work <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button>",
+      "css": ".ds-outline{display:inline-flex;align-items:center;gap:20px;min-height:50px;padding:16px 22px;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;background:var(--ink,#111211);color:var(--paper,#f4f0e8);border:1px solid #717966;border-radius:0;cursor:pointer;transition:background .18s,transform .18s}.ds-outline:hover{background:#2c3224;transform:translateY(-2px);border-color:var(--citron,#deff38)}.ds-outline:active{transform:translateY(1px)}.ds-outline:focus-visible{outline:2px solid var(--citron,#deff38);outline-offset:5px}",
+      "refersTo": "action-outline"
     },
     {
-      "name": "Resume control",
-      "kind": "button",
-      "description": "Subdued glass companion to menu.",
-      "html": "<button class=\"ds-control ds-resume\">RESUME</button>",
-      "css": ".ds-resume{height:44px;padding:0 20px;background:rgba(255,250,246,.055);backdrop-filter:blur(12px);border:0;color:#f2f3f7;font:700 10px \"Chakra Petch\",sans-serif;transition:background .3s}.ds-resume:hover{background:rgba(255,250,246,.1)}.ds-control:focus-visible{outline:1.5px solid #e8d1cb;outline-offset:4px}"
+      "name": "Technology tag",
+      "kind": "chip",
+      "description": "Outlined metadata tag; not an interactive filter.",
+      "html": "<span class=\"ds-tag\">TypeScript</span>",
+      "css": ".ds-tag{display:inline-block;padding:8px 11px;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;font-size:10px;text-transform:none;color:#d1d8c6;background:var(--ink,#111211);border:1px solid #5b6650}"
     },
     {
-      "name": "Chapter rail",
+      "name": "Feature tabs",
+      "kind": "button",
+      "description": "Calendar feature disclosures with explicit selected state.",
+      "html": "<div class=\"ds-tabs\"><button aria-pressed=\"true\">Calendar</button><button aria-pressed=\"false\">Analytics</button><button aria-pressed=\"false\">Media</button></div>",
+      "css": ".ds-tabs{display:flex;gap:6px;padding:18px;background:#1b1f17}.ds-tabs button{flex:1;min-height:44px;padding:8px;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;background:none;color:#c5cdb8;border:1px solid #59624c;cursor:pointer}.ds-tabs button[aria-pressed=true]{background:var(--citron,#deff38);color:var(--ink,#111211);border-color:var(--citron,#deff38)}.ds-tabs button:hover{border-color:var(--citron,#deff38)}.ds-tabs button:focus-visible{outline:2px solid var(--citron,#deff38);outline-offset:5px}"
+    },
+    {
+      "name": "Menu destination",
       "kind": "nav",
-      "description": "Active chapter marked with blush square.",
-      "html": "<nav class=\"ds-rail\"><a class=\"ds-control ds-current\" href=\"#home\" aria-current=\"page\">INTRODUCTION</a><a class=\"ds-control\" href=\"#projects\">SOCIALPOSTER</a></nav>",
-      "css": ".ds-rail{display:flex;flex-direction:column;gap:8px;font:700 10px \"Chakra Petch\",sans-serif;letter-spacing:1.2px}.ds-rail a{position:relative;padding:8px 0;color:#8d98aa;text-decoration:none}.ds-rail a:hover,.ds-rail .ds-current{color:#f4f5fa}.ds-current:before{content:\"\";position:absolute;left:-14px;top:50%;width:6px;height:7px;transform:translateY(-50%);background:#e8d1cb}.ds-control:focus-visible{outline:1.5px solid #e8d1cb;outline-offset:4px}"
+      "description": "Oversized condensed menu row, active citron.",
+      "html": "<nav class=\"ds-menu\"><a href=\"#projects\" aria-current=\"location\"><span>01</span><strong>Work</strong><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a><a href=\"#about\"><span>02</span><strong>About</strong><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></nav>",
+      "css": ".ds-menu{padding:20px;background:var(--ink,#111211);color:var(--paper,#f4f0e8)}.ds-menu a{display:flex;gap:28px;align-items:center;padding:12px 0;border-bottom:1px solid #536342;color:inherit;text-decoration:none}.ds-menu span{font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;color:#b6c69d}.ds-menu strong{font:700 clamp(60px,7vw,100px)/1 var(--display,\"Barlow Condensed\",sans-serif);text-transform:uppercase}.ds-menu svg{margin-left:auto}.ds-menu a[aria-current],.ds-menu a:hover{color:var(--citron,#deff38)}.ds-menu a:focus-visible{outline:2px solid var(--citron,#deff38);outline-offset:5px}"
     },
     {
-      "name": "Panel action",
+      "name": "Toolbox selection",
       "kind": "button",
-      "description": "Square outlined secondary reading action.",
-      "html": "<button class=\"ds-control ds-panel-action\">NEXT PROJECT &nbsp; \u2192</button>",
-      "css": ".ds-panel-action{border:1px solid rgba(255,255,255,.18);background:none;padding:14px 16px;color:#e8d1cb;font:400 12px Inter,sans-serif;transition:background .25s}.ds-panel-action:hover{background:rgba(255,255,255,.06)}.ds-control:focus-visible{outline:1.5px solid #e8d1cb;outline-offset:4px}"
+      "description": "Selected tool connects skills to project evidence.",
+      "html": "<div class=\"ds-tools\"><button aria-pressed=\"true\">React <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button><button aria-pressed=\"false\">TypeScript <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></button></div>",
+      "css": ".ds-tools{padding:25px;background:#1b1e17;border:1px solid #45513a}.ds-tools button{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:52px;padding:12px 10px;border:0;border-top:1px solid #47523c;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;text-transform:none;background:none;color:#c7d1b7;cursor:pointer}.ds-tools button:hover{background:#303c22}.ds-tools button[aria-pressed=true]{background:var(--citron,#deff38);color:var(--ink,#111211)}.ds-tools button:focus-visible{outline:2px solid var(--citron,#deff38);outline-offset:5px}"
     },
     {
-      "name": "Detail panel",
-      "kind": "custom",
-      "refersTo": "detail-panel",
-      "description": "Static surface preview of the native right-side reading dialog.",
-      "html": "<section class=\"ds-panel\"><header>SANJANA /</header><div><h2>SocialPoster.</h2><p>A workspace for creators to compose, schedule and publish posts.</p></div></section>",
-      "css": ".ds-panel{background:#0d141e;color:#e9edf4;max-width:650px;box-shadow:-25px 0 90px rgba(0,0,0,.45);font-family:Inter,sans-serif}.ds-panel header{padding:28px 36px;border-bottom:1px solid rgba(255,255,255,.18);font:700 11px \"Chakra Petch\",sans-serif;letter-spacing:1px}.ds-panel>div{padding:50px 36px 40px}.ds-panel h2{margin:0;font-size:38px;line-height:1.15;letter-spacing:-.035em}.ds-panel p{font-size:15px;line-height:1.8;color:#c0cbdb}"
+      "name": "Information wall card",
+      "kind": "card",
+      "description": "Outlined violet structure around factual interface labels.",
+      "html": "<div class=\"ds-wall\"><span>Applications</span><strong>Application status tracking</strong><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></div>",
+      "css": ".ds-wall{display:grid;grid-template-columns:1fr 20px;gap:6px;padding:15px 14px;background:#222b1c;color:var(--paper,#f4f0e8);border:1px solid var(--violet,#8976ff)}.ds-wall span{font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;font-size:9px;color:#ccddaf;grid-column:1/-1}.ds-wall strong{font:600 14px/1.6 Manrope,sans-serif}"
+    },
+    {
+      "name": "Seat selection",
+      "kind": "button",
+      "description": "Twelve-seat study uses 44px targets and a citron selection.",
+      "html": "<div class=\"ds-seats\"><button aria-pressed=\"false\">01</button><button aria-pressed=\"true\">02</button><button aria-pressed=\"false\">03</button><button aria-pressed=\"false\">04</button></div>",
+      "css": ".ds-seats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:270px;padding:20px;background:#e7e7dc}.ds-seats button{height:44px;min-width:44px;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:12px;letter-spacing:.035em;text-transform:uppercase;background:var(--paper,#f4f0e8);color:var(--ink,#111211);border:1px solid #647a48;cursor:pointer;transition:transform .18s}.ds-seats button[aria-pressed=true]{background:var(--citron,#deff38)}.ds-seats button:hover{transform:translateY(-2px);border-color:#4f6132}.ds-seats button:active{transform:translateY(1px)}.ds-seats button:focus-visible{outline:2px solid #465a21;outline-offset:5px}"
     }
   ],
   "narrative": {
-    "northStar": "The Cinematic Interface",
-    "overview": "A user-pinned Stratum adaptation: one fixed cinematic viewport, smoked-glass sculpture, chamfered perimeter, six manual portfolio chapters and a native right-edge detail dialog. Existing Sanjana content supplies the portfolio identity.",
+    "northStar": "The Interface Experiment",
+    "overview": "Interfaces become tactile objects, assemble into usable project stories, and reveal the developer’s craft. The built exhibition pairs an ink environment with paper reading surfaces, condensed headlines, technical annotations and bright directional controls.\n\nNative scrolling connects seven complete chapters. The sculpture is authored CSS/SVG geometry; original project mockups and the portrait remain the evidence. Motion adds continuity while the paused and reduced-motion views retain every chapter and interaction.",
     "keyCharacteristics": [
-      "Navy-black, white and pale blush",
-      "Inter and Chakra Petch",
-      "Fine chamfered frame",
-      "Smoked glass controls",
-      "Manual chapter navigation",
-      "Local motion toggle with system reduced-motion support"
+      "Ink/paper alternation with citron actions and violet inserts.",
+      "Condensed display, calm body copy and monospaced annotations.",
+      "Sharp structural boundaries and layered interface objects.",
+      "Native scroll with complete static parity."
     ],
-    "rules": [],
+    "rules": [
+      {
+        "name": "The Surface Contrast Rule",
+        "body": "Paper chapters use dark text and darker focus outlines; ink chapters use paper text and citron focus.",
+        "section": "colors"
+      }
+    ],
     "dos": [
-      "Preserve reference framing and verified portfolio content.",
-      "Keep hashes, active states, native dialog focus behavior and reduced motion."
+      "Do retain the seven chapter anchors and three original project exhibits.",
+      "Do use original mockups and the portrait with truthful captions.",
+      "Do keep visible keyboard focus, reversible studies and native dialog focus restoration.",
+      "Do preserve immediate static geometry and readable content when motion is off."
     ],
     "donts": [
-      "Do not restore the stale light/cobalt storyboard system.",
-      "Do not invent destinations, outcomes or a PDF resume.",
-      "Do not autoplay chapters."
+      "Don’t restore the superseded fixed cinematic viewport, blush palette or chapter rail.",
+      "Don’t replace native scrolling with scroll-jacking or mandatory pinned scenes.",
+      "Don’t invent outcomes, contact destinations, project links or a supplied PDF.",
+      "Don’t require hover, animation or WebGL to reach essential content."
     ]
   }
 }

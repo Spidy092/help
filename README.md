@@ -1,32 +1,37 @@
-# Sanjana — Front-End Portfolio
+# Sanjana — The Interface Experiment
 
-A cinematic, single-screen portfolio adapted from the supplied Stratum reference: a fine chamfered frame, restrained typography, six portfolio chapters, pointer parallax, and glass controls. Project chapters show the existing mockups and open readable detail panels. About, experience and resume are available through the same navigation.
+A complete React/TypeScript portfolio implemented from the exported Stitch design package. Seven native-scroll chapters turn interface objects into project exhibits: a layered hero, SocialPoster calendar/content studies, Event Booking ticket/seat selection, a Job Portal information wall, an editorial portrait, linked skills, professional experience, a usable resume and an honest contact-pending finale.
 
-## Run locally
+## Run and verify
 
 ```sh
 npm install
 npm run dev -- --host 127.0.0.1
-```
-
-## Check and build
-
-```sh
 npm run lint
 npm test
 npm run build
+npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
-Playwright uses Google Chrome at `/usr/bin/google-chrome`, or `CHROME_PATH` if configured. Tests cover chapter selection, project detail panels, resume download, keyboard navigation, motion preferences, asset loading and responsive overflow.
+Playwright uses `/usr/bin/google-chrome`, or `CHROME_PATH`. Eighteen browser tests cover factual chapter content, anchors, menu/dialog focus and Escape, all three project studies, skill connections, real text download, print isolation, motion pause/system preferences, touch, image failure/retry, responsive320–1600px, no-WebGL operation and interrupted/reverse movement.
 
-## Content and assets
+## Architecture
 
-- `src/data.ts`: existing profile, projects, skills and resume content.
-- `src/chapters.ts`: portfolio chapter copy and route aliases.
-- `src/App.tsx`: chapter navigation, native dialog panels and motion controls.
-- `src/App.css`: reference-inspired frame, scene, responsive layout and transitions.
-- `public/scenes/interface-sculpture.png`: generated conceptual background; generation prompt recorded in `.impeccable/scene-prompt.txt` and embedded in PNG metadata.
+- `src/data.ts`: typed original profile/projects, truthful skill connections and text resume.
+- `src/components`: reusable actions, image loading/error states, header, native-dialog overlays, project chapters/details, skills and resume components.
+- `src/scenes`: CSS/SVG interface sculpture and lazy-loaded project studies. There is no WebGL dependency.
+- `src/motion`: shared pause/reduced-motion context, GSAP/ScrollTrigger choreography, pointer depth and cleanup.
+- `docs/design-implementation-map.md`: source-screen mapping, ambiguity decisions and factual boundaries, written before code changes.
+- `docs/qa-report.md`: checked behavior, visual comparison scope and remaining limitations.
 
-Fonts are bundled locally. The original project illustrations remain identified as mockups. Contact and external project destinations can be filled in `src/data.ts` when real links are available; the site does not submit an imitation contact form.
+Native scroll and semantic anchors remain authoritative. Motion uses transforms/opacity and a portrait mask; it can be paused and respects the operating-system preference. Dialogs trap focus through the native modal API, close with Escape and restore their opener. Touch has explicit controls instead of hover-only features. Project illustration failures keep the facts available and offer retry. Fonts and images are self-hosted.
 
-The resume can be downloaded as text or printed/saved as PDF. Motion can be paused and respects the system reduced-motion preference. This revision runs locally; GitHub Pages configuration remains in `vite.config.ts`.
+## Factual boundaries
+
+Career remains Swaragh Technology, Front-End Developer,2024–Present. Original project mockups and portrait are retained. Generated Stitch claims about virtualized workflows, performance guarantees, extra technologies or outcomes are not included. The seat and information-wall interactions are labelled studies, not live booking or recruitment systems.
+
+No verified email, live demos, source destinations or PDF were supplied. Contact remains pending; project external links are omitted until verified. Resume downloads the actual text document. The preview supports browser print/save PDF; that does not represent a supplied PDF resume.
+
+## Preserved design
+
+The previous cinematic laptop portfolio is committed on `codex/preserved-cinematic` at `dfea644`. This implementation is on `codex/interface-experiment`. `main` was left unchanged. Nothing has been pushed or deployed by this implementation task.

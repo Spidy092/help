@@ -1,0 +1,5 @@
+# Interface Experiment quality bar
+
+User-pinned Stitch implementation, not a new design exploration. Preserve primary desktop reading order, ink/paper alternation, condensed display, citron actions, violet sculptural insert, exact chapter coverage, original mockups and portrait. Hero B's tactile structure supersedes the flatter full-page art. Correct generated factual errors using repository data, not false compliance with invented copy. Exact pixel-perfect fidelity is not claimed; verify the responsive implementation against each reference and name differences.
+
+All major interactions functional: reversible feature/seat/information studies, linked tool selection, modal focus management, navigation anchors, text resume download and print. Motion from authored start/end states, GSAP/ScrollTrigger cleanup and pause/static parity; no scroll-jacking, iframe screenshot substitute or WebGL requirement. Seven complete chapters readable without animation. Existing career facts only. Contact/destination gaps honestly pending.
