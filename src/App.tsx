@@ -22,6 +22,7 @@ import "@fontsource/manrope/latin-400.css";
 import "@fontsource/manrope/latin-500.css";
 import "@fontsource/manrope/latin-600.css";
 import "./App.css";
+import "./creative.css";
 
 gsap.registerPlugin(ScrollTrigger);
 const asset = (name: string) => `${import.meta.env.BASE_URL}${name}`;
@@ -39,6 +40,7 @@ function App() {
   const root = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLImageElement>(null);
   const [active, setActive] = useState(0);
+  const [labWidth, setLabWidth] = useState(74);
   const [menuOpen, setMenuOpen] = useState(false);
   const [expanded, setExpanded] = useState<number | null>(null);
   const [resumeOpen, setResumeOpen] = useState(false);
@@ -164,23 +166,14 @@ function App() {
       <main id="main">
         <section id="home" className="hero wrap">
           <div className="hero-copy">
-            <h1 className="hero-word">
-              SANJANA<span className="name-period">.</span>
-            </h1>
-            <p className="role">
-              Front-end developer.
-              <br />
-              Interfaces, brought to life.
-            </p>
-            <p className="hero-description">
-              I build responsive web experiences with React, TypeScript and a
-              close eye for the details.
-            </p>
-            <a className="primary-link" href="#projects">
-              Explore my work <ArrowUpRight size={22} />
-            </a>
+            <p className="eyebrow"><span className="eyebrow-dot" /> SANJANA / FRONT-END DEVELOPER</p>
+            <h1 className="hero-word">Making<br />the web<br /><em>feel</em><span className="name-period">.</span></h1>
+            <p className="role">Thoughtful interfaces.<br /><span>Human experiences.</span></p>
+            <p className="hero-description">I'm Sanjana, a front-end developer in Bengaluru. I turn thoughtful designs into responsive web experiences with React and TypeScript.</p>
+            <a className="primary-link" href="#projects">Explore selected work <ArrowUpRight size={22} /></a>
           </div>
           <div className="hero-art">
+            <div className="hero-side-note"><span>01 — FEATURED PROJECT</span><span>SCROLL TO EXPLORE ↓</span></div>
             <div className="stage">
               <div className="stage-top">
                 <span>{project.category}</span>
@@ -246,17 +239,56 @@ function App() {
           </div>
         </section>
 
+        <section className="lab-section wrap" aria-labelledby="lab-title">
+          <div className="lab-heading">
+            <div>
+              <p className="eyebrow lab-kicker">INTERACTION STUDY / 001</p>
+              <h2 id="lab-title">A little<br /><em>responsive magic.</em></h2>
+            </div>
+            <p>Good interfaces adapt. Drag the slider and watch this layout change shape in real time.</p>
+          </div>
+          <div className="lab-surface">
+            <div className="lab-toolbar">
+              <span><span className="live-dot" /> LIVE RESPONSIVE PREVIEW</span>
+              <span>{labWidth < 54 ? "MOBILE" : labWidth < 78 ? "TABLET" : "DESKTOP"} / {labWidth}%</span>
+            </div>
+            <div className="lab-viewport-shell">
+              <div className={`lab-viewport ${labWidth < 60 ? "lab-compact" : ""}`} style={{ width: `${labWidth}%` }}>
+                <div className="lab-browser"><div className="lab-browser-dots"><i /><i /><i /></div><span>the little studio.</span><span>↗</span></div>
+                <div className="lab-demo">
+                  <div className="lab-demo-copy">
+                    <span className="lab-demo-index">DESIGN / 001</span>
+                    <strong>Ideas with<br /><em>impact.</em></strong>
+                    <span>Small details make great experiences.</span>
+                    <b>EXPLORE ↗</b>
+                  </div>
+                  <div className="lab-demo-art"><span className="art-star">✳</span><span className="art-caption">MAKE IT MATTER</span></div>
+                </div>
+              </div>
+            </div>
+            <div className="lab-controls">
+              <label htmlFor="viewport-width">ADJUST VIEWPORT WIDTH</label>
+              <input id="viewport-width" type="range" min="34" max="100" step="1" value={labWidth} onChange={(event) => setLabWidth(Number(event.target.value))} />
+              <div className="lab-presets">
+                <button type="button" aria-pressed={labWidth === 100} onClick={() => setLabWidth(100)}>Desktop</button>
+                <button type="button" aria-pressed={labWidth === 70} onClick={() => setLabWidth(70)}>Tablet</button>
+                <button type="button" aria-pressed={labWidth === 38} onClick={() => setLabWidth(38)}>Mobile</button>
+              </div>
+            </div>
+          </div>
+          <p className="lab-footnote">An interactive study in responsive layout and the small details that make interfaces feel right.</p>
+        </section>
         <section id="projects" className="work-section wrap">
           <div className="section-title">
             <h2>
-              Built for
+              Selected
               <br />
-              <span>the browser.</span>
+              <span>work.</span>
             </h2>
             <p>
-              Three projects. Different problems.
+              A few things I have made.
               <br />
-              One focus on the experience.
+              Each built with curiosity and care.
             </p>
           </div>
           <div className="project-grid">
@@ -343,7 +375,7 @@ function App() {
           </div>
           <div className="about-copy">
             <h2>
-              The person
+              A person,
               <br />
               behind the pixels.
             </h2>
@@ -480,10 +512,9 @@ function App() {
 
         <section id="contact" className="contact-section wrap">
           <h2>
-            Good interfaces
+            Have a good
             <br />
-            start with a<br />
-            <span>conversation.</span>
+            idea? <span>Let’s talk.</span>
           </h2>
           <div className="contact-content">
             <p>
